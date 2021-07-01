@@ -571,7 +571,7 @@ toTagList tagString =
        List.filter (\str -> str == "foo") listOfStrings
     -}
     String.split " " tagString
-        |> List.map String.trim
+        |> List.map String.trim |> List.filter (\str -> not(String.isEmpty str))
 
 
 edit : Slug -> TrimmedForm -> Cred -> Http.Request (Article Full)
